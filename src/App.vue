@@ -98,6 +98,7 @@ export default {
 			defaultPageTitle: false,
 			loading: false,
 			isRefreshingCurrentConversation: false,
+			audio:null,
 		}
 	},
 
@@ -204,6 +205,10 @@ export default {
 		atLeastOneLastMessageIdChanged() {
 			if (this.windowIsVisible) {
 				return
+			}
+			
+			if (this.atLeastOneLastMessageIdChanged) {
+				this.getAudio().play()
 			}
 
 			this.setPageTitle(this.getConversationName(this.token), this.atLeastOneLastMessageIdChanged)
@@ -489,6 +494,13 @@ export default {
 				open: true,
 			})
 			document.querySelector('.conversations-search')[0].focus()
+		},
+		
+		getAudio() {
+			if (this.audio == null) {
+				this.audio = new Audio(require('./assets/notification_sound.ogg'))
+			}
+			return this.audio
 		},
 	},
 }
