@@ -64,6 +64,11 @@ webpackConfig.module.rules.push({
 })
 
 webpackConfig.module.rules.push({
+        test: /\.ogg$/,
+        type: 'asset/resource',
+})
+
+webpackConfig.module.rules.push({
 	test: /\.wasm$/i,
 	type: 'asset/resource',
 })
