@@ -98,7 +98,7 @@ export default {
 			defaultPageTitle: false,
 			loading: false,
 			isRefreshingCurrentConversation: false,
-			audio:null,
+			audio: null,
 		}
 	},
 
