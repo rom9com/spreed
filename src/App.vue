@@ -206,7 +206,6 @@ export default {
 			if (this.windowIsVisible) {
 				return
 			}
-			
 			if (this.atLeastOneLastMessageIdChanged) {
 				this.getAudio().play()
 			}
@@ -495,7 +494,6 @@ export default {
 			})
 			document.querySelector('.conversations-search')[0].focus()
 		},
-		
 		getAudio() {
 			if (this.audio == null) {
 				this.audio = new Audio(require('./assets/notification_sound.ogg'))
